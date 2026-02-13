@@ -1,0 +1,350 @@
+/**
+ * KodNest Premium Build System
+ * Design Philosophy: Calm, Intentional, Coherent, Confident
+ */
+
+/* ============================================
+   COLOR SYSTEM
+   ============================================ */
+:root {
+  /* Core Colors */
+  --color-background: #F7F6F3;
+  --color-text-primary: #111111;
+  --color-accent: #8B0000;
+  --color-success: #2D5016;
+  --color-warning: #8B6914;
+  
+  /* Semantic Colors */
+  --color-border: #D4D2CC;
+  --color-surface: #FFFFFF;
+  --color-text-secondary: #5A5A5A;
+  
+  /* Spacing System */
+  --space-xs: 8px;
+  --space-sm: 16px;
+  --space-md: 24px;
+  --space-lg: 40px;
+  --space-xl: 64px;
+  
+  /* Typography */
+  --font-serif: 'Crimson Pro', 'Georgia', serif;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  
+  --text-body-size: 16px;
+  --text-body-line-height: 1.7;
+  --text-max-width: 720px;
+  
+  /* Interaction */
+  --transition-speed: 180ms;
+  --transition-timing: ease-in-out;
+  --border-radius: 2px;
+}
+
+/* ============================================
+   TYPOGRAPHY
+   ============================================ */
+.heading-xl {
+  font-family: var(--font-serif);
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+.heading-lg {
+  font-family: var(--font-serif);
+  font-size: 36px;
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+.heading-md {
+  font-family: var(--font-serif);
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+.body-text {
+  font-family: var(--font-sans);
+  font-size: var(--text-body-size);
+  line-height: var(--text-body-line-height);
+  color: var(--color-text-primary);
+  max-width: var(--text-max-width);
+}
+
+.body-text-secondary {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--color-text-secondary);
+}
+
+/* ============================================
+   LAYOUT STRUCTURE
+   ============================================ */
+.page-container {
+  min-height: 100vh;
+  background-color: var(--color-background);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Top Bar */
+.top-bar {
+  height: 64px;
+  background-color: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--space-lg);
+}
+
+.top-bar-left {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.top-bar-center {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  color: var(--color-text-secondary);
+}
+
+.top-bar-right {
+  display: flex;
+  gap: var(--space-sm);
+}
+
+/* Context Header */
+.context-header {
+  padding: var(--space-xl) var(--space-lg);
+  background-color: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.context-header-title {
+  margin-bottom: var(--space-xs);
+}
+
+.context-header-subtitle {
+  margin: 0;
+}
+
+/* Main Content Area */
+.main-content {
+  flex: 1;
+  display: flex;
+  gap: var(--space-md);
+  padding: var(--space-lg);
+}
+
+.primary-workspace {
+  flex: 0 0 70%;
+}
+
+.secondary-panel {
+  flex: 0 0 calc(30% - var(--space-md));
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+/* Proof Footer */
+.proof-footer {
+  background-color: var(--color-surface);
+  border-top: 1px solid var(--color-border);
+  padding: var(--space-md) var(--space-lg);
+}
+
+.proof-checklist {
+  display: flex;
+  gap: var(--space-lg);
+  align-items: center;
+}
+
+.proof-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  font-family: var(--font-sans);
+  font-size: 14px;
+  color: var(--color-text-primary);
+}
+
+/* ============================================
+   COMPONENTS
+   ============================================ */
+
+/* Buttons */
+.btn {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 500;
+  padding: 12px var(--space-md);
+  border-radius: var(--border-radius);
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all var(--transition-speed) var(--transition-timing);
+  white-space: nowrap;
+}
+
+.btn-primary {
+  background-color: var(--color-accent);
+  color: var(--color-surface);
+  border-color: var(--color-accent);
+}
+
+.btn-primary:hover {
+  background-color: #6D0000;
+  border-color: #6D0000;
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--color-text-primary);
+  border-color: var(--color-border);
+}
+
+.btn-secondary:hover {
+  border-color: var(--color-text-primary);
+}
+
+/* Status Badge */
+.status-badge {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 500;
+  padding: 6px 12px;
+  border-radius: var(--border-radius);
+  border: 1px solid var(--color-border);
+  background-color: var(--color-surface);
+  color: var(--color-text-primary);
+}
+
+.status-badge.in-progress {
+  border-color: var(--color-warning);
+  color: var(--color-warning);
+}
+
+.status-badge.shipped {
+  border-color: var(--color-success);
+  color: var(--color-success);
+}
+
+/* Card */
+.card {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius);
+  padding: var(--space-md);
+}
+
+.card-title {
+  font-family: var(--font-sans);
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-sm);
+}
+
+/* Input */
+.input {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  padding: 12px var(--space-sm);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius);
+  background-color: var(--color-surface);
+  color: var(--color-text-primary);
+  transition: border-color var(--transition-speed) var(--transition-timing);
+  width: 100%;
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--color-text-primary);
+}
+
+/* Prompt Box */
+.prompt-box {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius);
+  padding: var(--space-sm);
+  font-family: 'SF Mono', 'Monaco', 'Courier New', monospace;
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--color-text-primary);
+  overflow-x: auto;
+}
+
+/* Checkbox */
+.checkbox {
+  width: 18px;
+  height: 18px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: all var(--transition-speed) var(--transition-timing);
+}
+
+.checkbox:checked {
+  background-color: var(--color-success);
+  border-color: var(--color-success);
+}
+
+/* ============================================
+   ERROR & EMPTY STATES
+   ============================================ */
+.error-state {
+  padding: var(--space-md);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-accent);
+  border-radius: var(--border-radius);
+}
+
+.error-state-title {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-accent);
+  margin-bottom: var(--space-xs);
+}
+
+.error-state-message {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--color-text-primary);
+}
+
+.empty-state {
+  padding: var(--space-xl);
+  text-align: center;
+}
+
+.empty-state-title {
+  font-family: var(--font-serif);
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-sm);
+}
+
+.empty-state-message {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-md);
+}
