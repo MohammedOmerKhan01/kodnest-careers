@@ -1,8 +1,0 @@
-export default function SettingsPage() {
-  return (
-    <main>
-      <h1>Settings</h1>
-      <p>Account and preferences settings placeholder.</p>
-    </main>
-  );
-}
