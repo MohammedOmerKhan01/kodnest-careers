@@ -1,2 +1,5 @@
-// Placeholder for v1 jobs API routes.
-// Implement HTTP handlers here later.
+import { NextResponse } from 'next/server';
+
+export async function GET() {
+  return NextResponse.json({ message: 'Jobs API - Not implemented' }, { status: 501 });
+}

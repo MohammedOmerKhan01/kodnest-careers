@@ -1,2 +1,5 @@
-// Placeholder for v1 health check endpoint.
-// Implement HTTP handlers here later.
+import { NextResponse } from 'next/server';
+
+export async function GET() {
+  return NextResponse.json({ status: 'ok', timestamp: new Date().toISOString() });
+}
